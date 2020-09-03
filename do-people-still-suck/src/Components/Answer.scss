@@ -1,0 +1,111 @@
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes transitionOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes delayIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+}
+
+#wrapper {
+  font-family: helvetica;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0 auto;
+  align-content: center;
+  text-align: center;
+  background-image: radial-gradient(rgb(189, 189, 189), rgb(80, 80, 80));
+  button {
+    cursor: pointer;
+    width: 60%;
+    font-size: 60px;
+    font-weight: bold;
+    border: 3px solid black;
+    letter-spacing: -2px;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 10px;
+    animation: transitionIn 0.2s;
+    pointer-events: visible;
+    text-align: center;
+  }
+
+  button:hover {
+    transition: 0.3s;
+    background-color: black;
+    color: lightgrey;
+    border: 3px solid lightgrey;
+  }
+  h3 {
+    animation: transitionIn 2s;
+  }
+  h1 {
+    font-size: 80px;
+  }
+  #hide-yes {
+    display: none;
+  }
+  #answer-wrapper {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    cursor: pointer;
+    #just-yes {
+      animation: transitionIn 2s;
+      text-align: left;
+    }
+    #yes-they-do {
+      animation: delayIn 3s;
+      text-align: left;
+    }
+  }
+}
+
+@media all and (max-width: 425px) {
+  #wrapper button {
+    font-size: 45px;
+  }
+  #wrapper button:active {
+    font-size: 45px;
+    background-color: black;
+    color: lightgrey;
+    border: 3px solid lightgrey;
+  }
+
+  #wrapper #answer-wrapper #just-yes {
+    font-size: 30px;
+  }
+  #wrapper #answer-wrapper #yes-they-do {
+    font-size: 30px;
+  }
+}
